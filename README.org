@@ -6,7 +6,18 @@ Goku is a tool that lets you manage your [[https://github.com/pqrs-org/Karabiner
 Gokuscript are tools that operate on your ~karabiner.edn~ to automate complex and boring tasks.
 
 * Implemented
-- ~resetvars.clj~ - automatically generate a rule to reset all variables to 0
+** resetvars.clj
+automatically generate a rule to reset all variables to 0
+
+*** Usage
+Add a following rule somewhere in your ~karabiner.edn~:
+
+#+begin_src clojure
+  {:des "Reset all variables"
+   :rules [[:!0 []]]}
+#+end_src
+
+Once the script executes, it will find this rule by it's ~:des~ and replace the empty ~[]~ with the generated rule. You may change the ~:!0~ to whatever you like.
 
 
 * Installation
