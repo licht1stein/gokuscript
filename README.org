@@ -1,14 +1,5 @@
 #+title: Gokuscript
 
-━━━━━━━━┏┓━━━━━━━━━━━━━━━━━━━━━━━━┏┓━
-━━━━━━━━┃┃━━━━━━━━━━━━━━━━━━━━━━━┏┛┗┓
-┏━━┓┏━━┓┃┃┏┓┏┓┏┓┏━━┓┏━━┓┏━┓┏┓┏━━┓┗┓┏┛
-┃┏┓┃┃┏┓┃┃┗┛┛┃┃┃┃┃━━┫┃┏━┛┃┏┛┣┫┃┏┓┃━┃┃━
-┃┗┛┃┃┗┛┃┃┏┓┓┃┗┛┃┣━━┃┃┗━┓┃┃━┃┃┃┗┛┃━┃┗┓
-┗━┓┃┗━━┛┗┛┗┛┗━━┛┗━━┛┗━━┛┗┛━┗┛┃┏━┛━┗━┛
-┏━┛┃━━━━━━━━━━━━━━━━━━━━━━━━━┃┃━━━━━━
-┗━━┛━━━━━━━━━━━━━━━━━━━━━━━━━┗┛━━━━━━
-
 Scripts to automatically edit ~karabiner.edn~ for [[https://github.com/yqrashawn/GokuRakuJoudo][Goku]].
 
 Goku is a tool that lets you manage your [[https://github.com/pqrs-org/Karabiner-Elements][Karabiner]] configuration with ease.
