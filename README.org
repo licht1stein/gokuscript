@@ -17,8 +17,10 @@ Add a following rule somewhere in your ~karabiner.edn~:
    :rules [[:!0 []]]}
 #+end_src
 
-Once the script executes, it will find this rule by it's ~:des~ and replace the empty ~[]~ with the generated rule. You may change the ~:!0~ to whatever you like.
+You may change the ~:!0~ to whatever key you like.
 
+Once the script executes, it will find this rule by it's ~:des~ and replace the empty ~[]~ with the generated action, something like:
+~[["layer_14c_onepress" 0] ["layer_15c_onepress" 0] ...]~
 
 * Installation
 1. Install [[https://babashka.org/][babashka]]
