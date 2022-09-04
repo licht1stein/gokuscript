@@ -32,8 +32,8 @@
 
 (defn find-layers
   "Find all substrings in s that match the `mode-pattern`. Return a sorted vector of unique matches."
-  [s]
-  (->> (re-seq mode-pattern s) (into #{}) sort (into [])))
+  [s pattern]
+  (->> (re-seq pattern s) (into #{}) sort (into [])))
 
 (defn layers->command
   "Take a coll of layers and turn them into an reset command:
@@ -46,17 +46,10 @@
 
 (defn s->command
   "Parse s for all layer strings and generate command."
-  [s]
-    (->> s
-         find-layers
-         layers->command))
-
-(comment
-  (def file "karabiner-sample.edn")
-  (def text (slurp file))
-  (->> text
-       find-layers
-       layers->command))
+  [s pattern]
+    (-> s
+        (find-layers pattern)
+        layers->command))
 
 (defn find-index-by-des [des zloc]
   (->> (z/sexpr zloc)
@@ -65,11 +58,11 @@
 
 (defn update-rules
   "Get entire karabiner.edn string and update rule with description."
-  [s]
-  (let [command (s->command s)
+  [s pattern des]
+  (let [command (s->command s pattern)
         zloc (z/of-string s)
         main (z/get zloc :main)
-        target-ind (find-index-by-des "Reset all variables" main)
+        target-ind (find-index-by-des des main)
         reset-rule (z/get main target-ind)]
         (-> reset-rule
         (z/get :rules)
@@ -79,13 +72,13 @@
         (z/replace command)
         (z/root-string))))
 
-(defn update-rules-in-file [file]
+(defn update-rules-in-file [file & {:keys [pattern des target]}]
   (let [text (slurp file)
         _ (println "Reading file...")
-        updated-text (update-rules text)
+        updated-text (update-rules text pattern des)
         _ (println "Parsing rules...")]
     (println "Updating file...")
-    (spit file updated-text)
+    (spit (or target file) updated-text)
     (println "Done.")))
 
 (def cli-options
@@ -96,6 +89,8 @@
    ["-p" "--pattern PATTERN" "Regex pattern to find all variables by"
     :id :pattern
     :default mode-pattern]
+   ["-t" "--target-file FILE" "Target file to write to. If not provided write to original file."
+    :id :target]
    ["-h" "--help"]])
 
 (defn error [& s]
@@ -117,12 +112,14 @@
 (defn -main [& args]
   (println logo)
   (let [{:keys [options arguments errors summary]} (tools.cli/parse-opts args cli-options)
-        _ (println options)
+        ;; _ (println options)
         file (first arguments)]
 
     (cond (:help options) (println (usage summary))
           (not (fs/exists? (fs/file file))) (error "Error! File not found:" file)
-          :else (println "Updating file" file))))
+          :else (do
+                  (println "Updating" file)
+                  (update-rules-in-file file options)))))
 
 (when (= *file* (System/getProperty "babashka.file"))
   (apply -main *command-line-args*))
