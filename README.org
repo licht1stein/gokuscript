@@ -19,8 +19,11 @@ Add a following rule somewhere in your ~karabiner.edn~:
 
 You may change the ~:!0~ to whatever key you like.
 
-Once the script executes, it will find this rule by it's ~:des~ and replace the empty ~[]~ with the generated action, something like:
-~[["layer_14c_onepress" 0] ["layer_15c_onepress" 0] ...]~
+
+Once the script executes, it will:
+1. find all variables by the regex pattern provided to the script
+2. find the target rule by it's ~:des~ and replace the empty ~[]~ with the generated action, something like:
+~[["layer_14c_onepress" 0] ["layer_15c_onepress" 0] ...]~ for all the variables found in step 1.
 
 * Installation
 1. Install [[https://babashka.org/][babashka]]
