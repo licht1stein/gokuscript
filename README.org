@@ -6,7 +6,7 @@ Goku is a tool that lets you manage your [[https://github.com/pqrs-org/Karabiner
 Gokuscript are tools that operate on your ~karabiner.edn~ to automate complex and boring tasks.
 
 * Implemented
-- ~resetvars.clj~ - automcatically generate a rule to reset all variables to 0
+- ~resetvars.clj~ - automatically generate a rule to reset all variables to 0
 
 
 * Installation
