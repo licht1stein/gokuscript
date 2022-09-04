@@ -1,5 +1,9 @@
 #+title: Gokuscript
-Scripts to automatically edit ~karabiner.edn~.
+Scripts to automatically edit ~karabiner.edn~ for [[https://github.com/yqrashawn/GokuRakuJoudo][Goku]].
+
+Goku is a tool that lets you manage your [[https://github.com/pqrs-org/Karabiner-Elements][Karabiner]] configuration with ease.
+
+Gokuscript are tools that operate on your ~karabiner.edn~ to automate complex and boring tasks.
 
 * Implemented
 - ~resetvars.clj~ - automcatically generate a rule to reset all variables to 0
