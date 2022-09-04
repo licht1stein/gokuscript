@@ -1,0 +1,16 @@
+#+title: Gokuscript
+Scripts to automatically edit ~karabiner.edn~.
+
+* Implemented
+- ~resetvars.clj~ - automcatically generate a rule to reset all variables to 0
+
+
+* Installation
+1. Install [[https://babashka.org/][babashka]]
+2. Run ~bb SCRIPT -h~ for help.
+
+For example:
+
+#+begin_src bash
+  bb resetvars.clj -h
+#+end_src
