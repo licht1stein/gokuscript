@@ -15,7 +15,7 @@ For example:
   bb resetvars.clj -h
 #+end_src
 
-#+RESULTS:
+#+begin_src
 ━━━━━━━━┏┓━━━━━━━━━━━━━━━━━━━━━━━━┏┓━
 ━━━━━━━━┃┃━━━━━━━━━━━━━━━━━━━━━━━┏┛┗┓
 ┏━━┓┏━━┓┃┃┏┓┏┓┏┓┏━━┓┏━━┓┏━┓┏┓┏━━┓┗┓┏┛
@@ -34,3 +34,5 @@ Options:
   -p, --pattern PATTERN   layer_[\w\d_]*       Regex pattern to find all variables by
   -t, --target-file FILE                       Target file to write to. If not provided write to original file.
   -h, --help
+
+#+end_src
