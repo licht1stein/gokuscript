@@ -12,10 +12,8 @@ Scripts to automatically edit ~karabiner.edn~.
 For example:
 
 #+begin_src sh
-  bb resetvars.clj -h
-#+end_src
+bb resetvars.clj -h
 
-#+begin_src
 ━━━━━━━━┏┓━━━━━━━━━━━━━━━━━━━━━━━━┏┓━
 ━━━━━━━━┃┃━━━━━━━━━━━━━━━━━━━━━━━┏┛┗┓
 ┏━━┓┏━━┓┃┃┏┓┏┓┏┓┏━━┓┏━━┓┏━┓┏┓┏━━┓┗┓┏┛
