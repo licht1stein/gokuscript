@@ -104,8 +104,7 @@
         ""
         "Options:"
         options-summary
-        ""
-        "Please refer to the manual page for more information."]
+        ""]
        (str/join \newline)))
 
 

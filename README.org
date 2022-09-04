@@ -11,6 +11,26 @@ Scripts to automatically edit ~karabiner.edn~.
 
 For example:
 
-#+begin_src bash
+#+begin_src sh
   bb resetvars.clj -h
 #+end_src
+
+#+RESULTS:
+━━━━━━━━┏┓━━━━━━━━━━━━━━━━━━━━━━━━┏┓━
+━━━━━━━━┃┃━━━━━━━━━━━━━━━━━━━━━━━┏┛┗┓
+┏━━┓┏━━┓┃┃┏┓┏┓┏┓┏━━┓┏━━┓┏━┓┏┓┏━━┓┗┓┏┛
+┃┏┓┃┃┏┓┃┃┗┛┛┃┃┃┃┃━━┫┃┏━┛┃┏┛┣┫┃┏┓┃━┃┃━
+┃┗┛┃┃┗┛┃┃┏┓┓┃┗┛┃┣━━┃┃┗━┓┃┃━┃┃┃┗┛┃━┃┗┓
+┗━┓┃┗━━┛┗┛┗┛┗━━┛┗━━┛┗━━┛┗┛━┗┛┃┏━┛━┗━┛
+┏━┛┃━━━━━━━━━━━━━━━━━━━━━━━━━┃┃━━━━━━
+┗━━┛━━━━━━━━━━━━━━━━━━━━━━━━━┗┛━━━━━━
+
+Gokuscript to automatically generate a command to reset all variables to 0.
+
+Usage: bb gokuscripts.clj FILE [options]
+
+Options:
+  -d, --des DESCRIPTION   Reset all variables  :des field to find the right rule to edit
+  -p, --pattern PATTERN   layer_[\w\d_]*       Regex pattern to find all variables by
+  -t, --target-file FILE                       Target file to write to. If not provided write to original file.
+  -h, --help
